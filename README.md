@@ -1,5 +1,4 @@
-# Desafio-CIeT
-Desafio técnico da empresa CI&amp;T
+# Desafio Técnico empresa CI&T
 
 # Desafio iOS/Android/Web
 
@@ -55,8 +54,9 @@ Sobre o aplicativo:
   b. Lista de livros (imagem e título)
   c. Detalhes do livro (scroll)
   
-   Aplicação:
+  # Aplicação:
    
+![Captura de Tela 2022-01-24 às 12 27 01](https://user-images.githubusercontent.com/17858685/151552962-f2b0379a-4a6a-47e2-b81f-b6044c2fdd48.png)
    
 
 ● Obter os dados do iTunes Search API
