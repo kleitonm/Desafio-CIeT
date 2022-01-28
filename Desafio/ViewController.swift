@@ -51,7 +51,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                                     // Convert
                                     var result: Book?
                                     do {
-                                        result = try JSONDecoder().decode(Book.self, from: data)
+                                        let resultData = try JSONDecoder().decode(Library.self, from: data)
+                                        self.book = [resultData]
                                     }
                                     catch {
                                         print("error")
@@ -63,7 +64,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
                                     
                                     // Update our books array
                                     let newBooks = finalResult
-                                    self.book.append(newBooks)
+                                    self.Book.append(newBooks)
                                     
                                     // Refresh our table
                                     DispatchQueue.main.async {
@@ -82,7 +83,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: LibraryTableViewCell.identifier, for: indexPath) as? LibraryTableViewCell {
             
-            cell.configure(with: Book[indexPath.row])
+            cell.configure(with: self.book[indexPath.row])
             return cell
         }
         return UITableViewCell()
@@ -110,7 +111,7 @@ struct Library: Codable {
     }
 }
 
-public class Book: Codable {
+ struct Book: Codable {
      let trackName: String?
      let artistName: String?
      let artworkUrl60: String?
